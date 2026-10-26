@@ -1,0 +1,418 @@
+{
+  "_readme": "Everything that defines 'good' lives here. Edit this file, not the code. severity_overrides: set a rule id to block, warn or off. Compliance checks: enable/disable, weight, params.",
+  "lint": {
+    "severity_overrides": {},
+    "vague_terms": [
+      "robust",
+      "fast",
+      "quickly",
+      "user-friendly",
+      "user friendly",
+      "intuitive",
+      "seamless",
+      "easy",
+      "easily",
+      "scalable",
+      "efficient",
+      "efficiently",
+      "appropriate",
+      "as needed",
+      "etc",
+      "and so on",
+      "should work",
+      "works well",
+      "good performance",
+      "high performance",
+      "secure enough",
+      "reasonable",
+      "properly",
+      "correctly",
+      "smooth",
+      "modern",
+      "best practice",
+      "optimal"
+    ],
+    "commitment_terms": [
+      "commit",
+      "committed",
+      "guarantee",
+      "guaranteed",
+      "will deliver by",
+      "fixed price",
+      "we promise"
+    ],
+    "quote_fuzzy_threshold": 0.88,
+    "quote_min_words": 3,
+    "verbs": [
+      "add",
+      "allow",
+      "apply",
+      "automate",
+      "build",
+      "check",
+      "configure",
+      "connect",
+      "create",
+      "deploy",
+      "disable",
+      "display",
+      "draft",
+      "enable",
+      "enforce",
+      "export",
+      "expose",
+      "extend",
+      "finalise",
+      "finalize",
+      "fix",
+      "generate",
+      "handle",
+      "hide",
+      "host",
+      "implement",
+      "import",
+      "improve",
+      "install",
+      "integrate",
+      "introduce",
+      "investigate",
+      "log",
+      "map",
+      "measure",
+      "migrate",
+      "monitor",
+      "notify",
+      "patch",
+      "post",
+      "prevent",
+      "publish",
+      "raise",
+      "read",
+      "record",
+      "reduce",
+      "register",
+      "remove",
+      "rename",
+      "replace",
+      "restrict",
+      "return",
+      "review",
+      "rotate",
+      "run",
+      "schedule",
+      "secure",
+      "send",
+      "set",
+      "show",
+      "support",
+      "sync",
+      "track",
+      "update",
+      "upgrade",
+      "validate",
+      "write"
+    ],
+    "systems": [
+      "magento",
+      "adobe commerce",
+      "pimcore",
+      "drupal",
+      "hybris",
+      "sap",
+      "shopify",
+      "akeneo",
+      "salsify",
+      "unicommerce",
+      "vinculum",
+      "odoo",
+      "mulesoft",
+      "fastcoo",
+      "cloudflare",
+      "new relic",
+      "sftp",
+      "ftp",
+      "api",
+      "graphql",
+      "rest",
+      "cron",
+      "admin",
+      "database",
+      "mysql",
+      "redis",
+      "elasticsearch",
+      "opensearch",
+      "varnish",
+      "react",
+      "pwa",
+      "ios",
+      "android",
+      "zatca",
+      "netsuite",
+      "dynamics",
+      "oracle",
+      "navision",
+      "oms",
+      "wms",
+      "erp",
+      "pim",
+      "dam",
+      "checkout",
+      "cart",
+      "github",
+      "gitlab",
+      "bitbucket",
+      "slack",
+      "pulse",
+      "granola",
+      "jira",
+      "docker",
+      "kubernetes",
+      "postgres",
+      "postgresql",
+      "sqlite",
+      "aws",
+      "azure",
+      "gcp",
+      "linux",
+      "nginx",
+      "webhook",
+      "salesforce",
+      "stripe",
+      "paypal",
+      "adyen",
+      "hubspot"
+    ],
+    "coverage_topics": {
+      "job_to_be_done": [
+        "re:\\b(we|i|they|users?|managers?|customers?|clients?|team|staff) (cannot|can't|couldn't|are unable to|struggle to|have no way to)\\b",
+        "unable to",
+        "trying to find",
+        "pain point",
+        "takes too long",
+        "keeps failing"
+      ],
+      "who_and_how_often": [
+        "per day",
+        "a day",
+        "daily",
+        "weekly",
+        "per week",
+        "users",
+        "managers",
+        "peak",
+        "volume",
+        "orders a",
+        "worst day"
+      ],
+      "what_happens_today": [
+        "today",
+        "currently",
+        "at the moment",
+        "right now",
+        "workaround",
+        "manually",
+        "we export",
+        "we use"
+      ],
+      "what_done_looks_like": [
+        "day one",
+        "done looks",
+        "check it works",
+        "when this is live",
+        "verify",
+        "success"
+      ],
+      "boundaries": [
+        "must not",
+        "cannot change",
+        "can't change",
+        "do not change",
+        "not allowed",
+        "sign off",
+        "signs off",
+        "read-only",
+        "off limits"
+      ],
+      "date_and_reason": [
+        "deadline",
+        "go-live",
+        "go live",
+        "launch date",
+        "launching on",
+        "campaign",
+        "audit",
+        "season",
+        "due date",
+        "by the end of",
+        "must be live",
+        "needs to be live"
+      ],
+      "_note": "Plain entries match whole words only ('campaign' does not match 'campaigns'). Entries starting 're:' are regular expressions. Precision matters more than recall: a false 'found' hides a real gap."
+    },
+    "drift_similarity": {
+      "criterion": 0.75,
+      "risk_or_dep_title": 0.6,
+      "scope_to_story": 0.4
+    },
+    "call_ready_min_topics": 5
+  },
+  "compliance": {
+    "roles": {
+      "gate1_approvers": [
+        "delivery_manager",
+        "client"
+      ],
+      "gate2_approvers": [
+        "delivery_manager",
+        "tech_lead"
+      ],
+      "gate3_approvers": [
+        "tech_lead"
+      ],
+      "tier_setters": [
+        "tech_lead",
+        "senior"
+      ]
+    },
+    "checks": {
+      "C01": {
+        "enabled": true,
+        "weight": 1,
+        "params": {
+          "title_regex": "^.+ :: .+ :: [A-Z][A-Z0-9]{1,9}$"
+        }
+      },
+      "C02": {
+        "enabled": true,
+        "weight": 2,
+        "params": {
+          "max_minutes": 60
+        }
+      },
+      "C03": {
+        "enabled": true,
+        "weight": 3,
+        "params": {}
+      },
+      "C04": {
+        "enabled": true,
+        "weight": 2,
+        "params": {
+          "max_hours": 24
+        }
+      },
+      "C05": {
+        "enabled": true,
+        "weight": 3,
+        "params": {
+          "min_review_seconds": 60
+        }
+      },
+      "C06": {
+        "enabled": true,
+        "weight": 3,
+        "params": {}
+      },
+      "C07": {
+        "enabled": true,
+        "weight": 2,
+        "params": {}
+      },
+      "C08": {
+        "enabled": true,
+        "weight": 3,
+        "params": {}
+      },
+      "C09": {
+        "enabled": true,
+        "weight": 3,
+        "params": {}
+      },
+      "C10": {
+        "enabled": true,
+        "weight": 2,
+        "params": {
+          "grace_days": 3
+        }
+      },
+      "C11": {
+        "enabled": true,
+        "weight": 2,
+        "params": {}
+      },
+      "C12": {
+        "enabled": true,
+        "weight": 1,
+        "params": {}
+      },
+      "C13": {
+        "enabled": true,
+        "weight": 3,
+        "params": {}
+      },
+      "C14": {
+        "enabled": true,
+        "weight": 3,
+        "params": {}
+      },
+      "C15": {
+        "enabled": true,
+        "weight": 2,
+        "params": {}
+      },
+      "C16": {
+        "enabled": true,
+        "weight": 2,
+        "params": {}
+      },
+      "C17": {
+        "enabled": true,
+        "weight": 3,
+        "params": {}
+      },
+      "C18": {
+        "enabled": true,
+        "weight": 1,
+        "params": {}
+      },
+      "C19": {
+        "enabled": true,
+        "weight": 2,
+        "params": {
+          "review_within_hours": 24
+        }
+      },
+      "C20": {
+        "enabled": true,
+        "weight": 0,
+        "params": {}
+      },
+      "C21": {
+        "enabled": true,
+        "weight": 1,
+        "params": {}
+      }
+    }
+  },
+  "baselines": {
+    "_note": "Targets quoted in the playbook. Replace with measured baselines from Pulse history once available.",
+    "call_to_pack_minutes": 15,
+    "pack_to_tickets_minutes": 20,
+    "call_to_build_start_days": 0,
+    "min_flows_for_correlation": 8,
+    "high_compliance_threshold": 80
+  },
+  "models": {
+    "_note": "Tiers are sizes. Change the model behind a tier here. relative_cost weights are PLACEHOLDERS for comparing tiers; replace them with your real per-token prices before reading anything into cost.",
+    "tiers": {
+      "small": "haiku",
+      "standard": "sonnet",
+      "strong": "opus"
+    },
+    "relative_cost": {
+      "small": 1,
+      "standard": 3,
+      "strong": 15
+    }
+  }
+}

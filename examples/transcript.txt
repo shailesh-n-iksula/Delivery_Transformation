@@ -1,0 +1,20 @@
+Meera (Iksula): Walk me through the last time this went wrong.
+Priya (client, store operations): A store manager cannot find last month's returns without exporting everything, and then we filter it by hand in Excel. Last month that took the whole afternoon.
+Meera: Who does this and how often?
+Priya: Store managers, about forty of them, every month end. On a normal day we get around 2,000 returns, and on the worst day after a sale it is closer to 8,000. Over a month the export is about 40,000 rows.
+Meera: What happens today, step by step?
+Priya: Today they open the Magento admin, export the full returns grid to CSV, open it in Excel, and filter by date and store. Honestly the workaround is that two managers keep a saved copy from last month.
+Meera: When this is live, what will you do on day one to check it works?
+Priya: On day one I will pick last month, filter to one store, and compare the count with what finance has. If it matches, we are done.
+Meera: What does this talk to? Anything upstream or downstream we would break?
+Priya: It only reads from Magento. Finance picks the file up from an SFTP folder every night, so the nightly file must keep the same columns. We must not change the existing returns grid.
+Meera: Who else has to agree before this goes live?
+Priya: Rahul in finance signs off the file format. Only store managers should see it, not the support agents.
+Meera: Is there a deadline?
+Priya: Yes, the audit starts on the first of December, so we need it live before the audit.
+Meera: So to confirm, returns stay editable for 30 days and after that they are read-only.
+Priya: Correct.
+Meera: If we could only ship half of this in the first release, which half is worth having?
+Priya: The export with the date filter. The permissions I can live without for a week.
+Meera: Recap. Decisions: an export button with date and store filters in the Magento admin, a nightly CSV job of about 40,000 rows to SFTP, store managers only. Open points: the SFTP target and who owns it, and whether cancelled orders are included.
+Priya: Yes. I will check the SFTP target with IT.

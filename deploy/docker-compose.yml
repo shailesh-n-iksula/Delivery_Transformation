@@ -1,0 +1,18 @@
+# UNTESTED starting point. Run from the repo root:  docker compose -f deploy/docker-compose.yml up
+services:
+  server:
+    build: { context: .., dockerfile: deploy/Dockerfile }
+    env_file: ../.env                       # copy deploy/.env.example to .env and fill it in; never commit .env
+    ports: ["127.0.0.1:8080:8080"]          # put a reverse proxy with TLS in front before exposing it
+    volumes:
+      - ../projects:/app/projects
+      - ../data:/app/data
+    restart: unless-stopped
+  ticker:                                   # the scheduler: runs the code-only steps, costs no tokens when idle
+    build: { context: .., dockerfile: deploy/Dockerfile }
+    env_file: ../.env
+    volumes:
+      - ../projects:/app/projects
+      - ../data:/app/data
+    entrypoint: ["sh", "-c", "while true; do for p in $$DCP_PROJECTS; do python3 -m dcp tick --project $$p; done; sleep $${DCP_TICK_SECONDS:-300}; done"]
+    restart: unless-stopped

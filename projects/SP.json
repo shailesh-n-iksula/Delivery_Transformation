@@ -1,0 +1,86 @@
+{
+  "key": "SP",
+  "name": "SiteOne Pimcore",
+  "track": "build",
+  "mode": "warn",
+  "pulse": {
+    "project_key": "SP",
+    "board_url": "https://pulse.iksula.com/projects/SP/board",
+    "support_parent": "",
+    "title_prefix": ""
+  },
+  "slack": {
+    "channel": "#sp-delivery",
+    "intake_channel": ""
+  },
+  "granola": {
+    "source": "paste",
+    "folder": "",
+    "title_tag": "SP"
+  },
+  "git": {
+    "repo": "iksula/siteone-pimcore",
+    "base_branch": "main",
+    "strategy": "github-flow",
+    "rules_file": "CLAUDE.md",
+    "pattern_files": []
+  },
+  "validation": {
+    "require_tech_lead": false
+  },
+  "models": {
+    "lint_pack": "none",
+    "lint_tickets": "none",
+    "check_drift": "none",
+    "assess_call": "none",
+    "poll_granola": "small",
+    "poll_slack": "small",
+    "sweep_pulse": "small",
+    "refresh_governance": "small",
+    "open_gate": "small",
+    "nudge": "small",
+    "escalate": "small",
+    "create_pulse_tickets": "small",
+    "launch_build": "small",
+    "request_followup": "small",
+    "draft_pack": "standard",
+    "fix_pack": "standard",
+    "draft_tickets": "standard",
+    "fix_tickets": "standard",
+    "create_support_ticket": "small",
+    "prepare_questions": "small"
+  },
+  "escalate_after_failures": 2,
+  "runner": {
+    "mode": "claude-session"
+  },
+  "people": {
+    "delivery_manager": {
+      "name": "Meera N",
+      "slack_id": "U0EXAMPLE1",
+      "email": "meera@example.com"
+    },
+    "tech_lead": {
+      "name": "Arjun K",
+      "slack_id": "U0EXAMPLE2",
+      "email": "arjun@example.com"
+    },
+    "delegate": {
+      "name": "Rhea S",
+      "slack_id": "U0EXAMPLE3",
+      "email": "",
+      "covers": [
+        "tech_lead"
+      ]
+    }
+  },
+  "schedules": {
+    "granola_poll_min": 15,
+    "slack_poll_min": 5,
+    "pulse_sweep_min": 1440,
+    "governance_refresh_min": 1440,
+    "gate_nudge_hours": 4,
+    "escalate_after_nudges": 2
+  },
+  "tier_default": "T2"
+}

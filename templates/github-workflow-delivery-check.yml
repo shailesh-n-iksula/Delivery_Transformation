@@ -1,0 +1,24 @@
+# TEMPLATE. Not run or tested yet: it needs a GitHub Actions runner and the secret named below.
+# Put it in each repo as .github/workflows/delivery-check.yml, then (repo admin) make "delivery-check / pr-check"
+# a REQUIRED status check on the base branch. It checks the pull request description against the template:
+# branch naming, ticket, AI declaration, tier evidence, and a Parakh verdict for the latest commit.
+name: delivery-check
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+    steps:
+      # PLACEHOLDER: where the delivery system's code lives and how this job may read it is for the tech team to decide.
+      - uses: actions/checkout@v4
+        with:
+          repository: iksula/delivery-control
+          token: ${{ secrets.DCP_REPO_READ_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check the pull request
+        run: python3 -m dcp pr-check --event "$GITHUB_EVENT_PATH" --key SP --base main

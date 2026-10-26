@@ -1,0 +1,64 @@
+{
+  "key": "ML",
+  "name": "LEGO Magento support",
+  "track": "support",
+  "mode": "warn",
+  "pulse": {
+    "project_key": "ML",
+    "board_url": "https://pulse.iksula.com/projects/ML/board",
+    "support_parent": "ML-1454",
+    "title_prefix": "[L2] :"
+  },
+  "slack": {
+    "channel": "",
+    "intake_channel": ""
+  },
+  "granola": {
+    "folder": "",
+    "title_tag": "ML"
+  },
+  "git": {
+    "repo": "",
+    "base_branch": "main",
+    "strategy": "github-flow",
+    "rules_file": "CLAUDE.md",
+    "pattern_files": []
+  },
+  "validation": {
+    "require_tech_lead": false
+  },
+  "models": {
+    "lint_pack": "none",
+    "lint_tickets": "none",
+    "check_drift": "none",
+    "poll_granola": "small",
+    "poll_slack": "small",
+    "sweep_pulse": "small",
+    "refresh_governance": "small",
+    "open_gate": "small",
+    "nudge": "small",
+    "escalate": "small",
+    "create_pulse_tickets": "small",
+    "launch_build": "small",
+    "draft_pack": "standard",
+    "fix_pack": "standard",
+    "draft_tickets": "standard",
+    "fix_tickets": "standard",
+    "create_support_ticket": "small",
+    "prepare_questions": "small"
+  },
+  "escalate_after_failures": 2,
+  "runner": {
+    "mode": "claude-session"
+  },
+  "people": {},
+  "schedules": {
+    "granola_poll_min": 15,
+    "slack_poll_min": 5,
+    "pulse_sweep_min": 1440,
+    "governance_refresh_min": 1440,
+    "gate_nudge_hours": 4,
+    "escalate_after_nudges": 2
+  },
+  "tier_default": "T2"
+}

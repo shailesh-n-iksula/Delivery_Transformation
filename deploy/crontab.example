@@ -1,0 +1,5 @@
+# Without Docker: run the tick on a schedule. A tick that has nothing due, or only code steps, uses no tokens.
+# Adjust the path and project keys. Logs go to a file the tech team should rotate.
+*/5 * * * *  cd /srv/delivery-control && python3 -m dcp tick --project SP >> /var/log/dcp-tick.log 2>&1
+# Nightly: refresh the dashboard where people can open it.
+10 6 * * *   cd /srv/delivery-control && python3 -m dcp dashboard --project SP --out /srv/www/dcp/SP.html >> /var/log/dcp-dashboard.log 2>&1
